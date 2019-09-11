@@ -1,0 +1,22 @@
+﻿{
+    "resourceSets": [
+        {
+            "resources": [
+                {
+                    "confidence": "Low",
+                    "geocodePoints": [
+                        {
+                            "type": "Point",
+                            "coordinates": [
+                                51.509521484375,
+                                -0.0763700008392334
+                            ],
+                            "calculationMethod": "Rooftop",
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "statusCode": 200
+}

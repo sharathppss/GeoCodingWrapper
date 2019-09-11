@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeoCoding\GeoCoding.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="APIKeys.txt" />
+    <None Remove="APIKeys.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="APIKeys.config" />
+  </ItemGroup>
+</Project>

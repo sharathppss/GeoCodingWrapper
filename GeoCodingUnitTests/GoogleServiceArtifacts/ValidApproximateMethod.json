@@ -1,0 +1,14 @@
+﻿{
+    "results": [
+        {
+            "geometry": {
+                "location": {
+                    "lat": 37.4224764,
+                    "lng": -122.0842499
+                },
+                "location_type": "APPROXIMATE"
+            }
+        }
+    ],
+    "status": "OK"
+}
