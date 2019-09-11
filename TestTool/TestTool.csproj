@@ -13,6 +13,6 @@
     <None Remove="APIKeys.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="APIKeys.config" />
+    <Content Include="APIKeys.keyconfig" />
   </ItemGroup>
 </Project>

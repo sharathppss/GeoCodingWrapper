@@ -18,8 +18,8 @@ namespace TestTool
         {
             string sampleAddress = "3530 Hughes Avenue Los Angeles";
 
-            string googleKey = "AIzaSyBqxB6A-05TAGxPqfqIPYAwQh0sk4LWE0Y";
-            string bingKey = "AgtV5YJafiu4bnsT8skRfjw - DE0wCPqMUdUHMgUKlYp5qqQsgqeAHJcvEw9M4I__";
+            string googleKey = "<insert_key>";
+            string bingKey = "<insert_key>";
 
             var gcClient = new HttpClient(new GeoCoding.Utils.Http.GeoHandler(3));
 
