@@ -1,9 +1,9 @@
 ﻿GeoCodingWrapper
 =====================
 
-GeoCodingWrapper is a 2.0 .NET standard wrapper library for physical address translation with support for multiple geoencoding providers.
-The library primarly supports retrieval of geo coordinates for any address string with a minimum acceptable accuracy level provided as input to the request. It also allow the 
-client to set the sequence of preferred geoencoding providers which is leveraged when single response requests are processed by the libarary.
+GeoCodingWrapper is a .NET standard 2.0 wrapper library for physical address translation with support for multiple geocoding providers.
+
+The library primarly supports retrieval of geo coordinates for any address string with a minimum acceptable accuracy level provided as input to the request. It also allow the client to set the sequence of preferred geoencoding providers which is leveraged when single response requests are processed by the libarary.
 
 Additionally the individual geoencoding providers leveraged by the library are exposed as public classes for seperate consumption.
 
@@ -13,19 +13,16 @@ GeoCodingWrapper is compiled as a .NET Standard 2.0 library and is available as 
 
 ## NuGet
 
-    <Nuget package location>
-    <Instruction to include local nuget package>
-    PM> Install-Package RichardSzalay.MockHttp
+[Nuget Package for local import](../NugetPackage/)
 
 ## Prerequisite
-
-GeoCodingWrapper Provider API Keys
+###GeoCodingWrapper Provider API Keys
 
 The client is responsible for obtaining the API keys for individual geocoding providers initialized to the library. Refer to initialization section of AddressTranslator Class for more info.
 
-Google Geocoding API key instructions: 
+[Google geocoding API key generation instructions](https://developers.google.com/maps/documentation/geocoding/get-api-key)
 
-Bing Geocoding API key instructions: 
+[Bing geocoding API key generation instructions](https://docs.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key)
         
 ## API Documentation
 
@@ -54,7 +51,7 @@ geoServiceList.Add(GeoServiceFactory.CreateGoogleService(gcClient, googleKey));
 var translator = new AddressTranslator(geoServices);
 ```
 
-#### GetCoordinate(string address, AccuracyLevel threshold)
+#### Method - Task\<GeoCordinate\> GetCoordinate(string address, AccuracyLevel threshold)
 
 ##### Description
 Retrieve first valid coordinate from geoservice list for specified address string. Coordinate only satisfiying minimum threshold accuracy are considered.
@@ -71,7 +68,7 @@ var translator = new AddressTranslator(geoServices);
 GeoCordinate singleResult = await translator.GetCoordinate(sampleAddress, GeoCoding.Data.AccuracyLevel.Lowest);
 ```
 
-#### GetAllCoordinates(string address, AccuracyLevel threshold)
+#### Method - IList<Task\<GeoCordinate\>> GetAllCoordinates(string address, AccuracyLevel threshold)
 
 ##### Description
 Retrieve all valid coordinates from geoservice list for specified address string. Only coordinates satisfiying minimum threshold accuracy are included.
@@ -139,7 +136,7 @@ public enum StatusCode
 ```
 
 
-## Build / Release
+## Build
 
 Clone the repository and build `GeoCoding.sln` using Visual Studio. NuGet package restore must be enabled.
 

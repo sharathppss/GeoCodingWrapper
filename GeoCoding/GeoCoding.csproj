@@ -13,6 +13,7 @@
     <Title>GeoCodingWrapper</Title>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
