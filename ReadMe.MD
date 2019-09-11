@@ -36,7 +36,6 @@ The client is responsible for obtaining the API keys for individual geocoding pr
 
 #### Initialization
 
-##### Description
 Use the factory methods to create the required geocoding provider services.
 
 **Note:** The order of services in geoService list is accepted as the preferred sequence for address translation. The first element being the most preferred.
@@ -59,13 +58,12 @@ var translator = new AddressTranslator(geoServices);
 
 #### Method - Task\<GeoCordinate\> GetCoordinate(string address, AccuracyLevel threshold)
 
-##### Description
 Retrieve first valid coordinate from geoservice list for specified address string. Coordinate only satisfiying minimum threshold accuracy are considered.
 
-##### Result
+#### Result
 Valid GeoCoordinate object on success, null when no valid entries found.
 
-##### Sample Usage
+#### Sample Usage
 ```csharp
 string sampleAddress = "ABCD, Los Angeles";
 
@@ -76,13 +74,12 @@ GeoCordinate singleResult = await translator.GetCoordinate(sampleAddress, GeoCod
 
 #### Method - IList<Task\<GeoCordinate\>> GetAllCoordinates(string address, AccuracyLevel threshold)
 
-##### Description
 Retrieve all valid coordinates from geoservice list for specified address string. Only coordinates satisfiying minimum threshold accuracy are included.
 
-##### Result
+#### Result
 List of valid GeoCoordinate objects on success, empty list when no valid entries found.
 
-##### Sample Usage
+#### Sample Usage
 ```csharp
 string sampleAddress = "ABCD, Los Angeles";
 
@@ -92,7 +89,7 @@ List<GeoCordinate> singleResult = await translator.GetAllCoordinate(sampleAddres
 ```
 
 ### Data Objects
-##### GeoCoordinate Response
+#### GeoCoordinate Response
 ```csharp
 public class GeoCoordinate
 {
@@ -102,7 +99,7 @@ public class GeoCoordinate
     public ServiceType Service { get; set; }
 };
 ```
-##### AccuracyLevel Enum
+#### AccuracyLevel Enum
 ```csharp
 public enum AccuracyLevel
 {
@@ -113,7 +110,7 @@ public enum AccuracyLevel
 };
 ```
 
-##### ServiceType Enum
+#### ServiceType Enum
 ```csharp
 public enum ServiceType
 {
