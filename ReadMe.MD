@@ -22,7 +22,7 @@ Import below nuget package locally for usage.
 [Download Nuget Package](NugetPackage/GeoCodingWrapper.1.0.0.0.nupkg.local)
 
 ## Prerequisite
-###GeoCodingWrapper Provider API Keys
+### GeoCodingWrapper Provider API Keys
 
 The client is responsible for obtaining the API keys for individual geocoding providers initialized to the library. Refer to initialization section of AddressTranslator Class for more info.
 
