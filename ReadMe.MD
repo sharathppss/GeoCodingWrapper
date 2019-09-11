@@ -13,7 +13,10 @@ GeoCodingWrapper is compiled as a .NET Standard 2.0 library and is available as 
 
 ## NuGet
 
-[Nuget Package for local import](../NugetPackage/)
+Import below nuget package locally for usage.
+
+[Nuget local feed instructions](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds)
+[Nuget Package location](https://github.com/sharathppss/GeoCodingWrapper/NugetPackage/GeoCodingWrapper.1.0.0.0.nupkg.local)
 
 ## Prerequisite
 ###GeoCodingWrapper Provider API Keys
