@@ -16,7 +16,7 @@ namespace TestTool
     {
         static async Task Main(string[] args)
         {
-            string sampleAddress = "3530 Hughes Avenue Los Angeles";
+            string sampleAddress = "<address>";
 
             string googleKey = "<insert_key>";
             string bingKey = "<insert_key>";
@@ -50,7 +50,7 @@ namespace TestTool
         Dictionary<string, string> ReadKeys(string filePath)
         {
             var result = new Dictionary<string, string>();
-            string text = System.IO.File.ReadAllText(@"APIKeys.txt");
+            string text = System.IO.File.ReadAllText(@"APIKeys.keyconfig");
 
             return result;
         }
