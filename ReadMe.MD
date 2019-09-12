@@ -60,10 +60,10 @@ var translator = new AddressTranslator(geoServices);
 
 Retrieve first valid coordinate from geoservice list for specified address string. Coordinate only satisfiying minimum threshold accuracy are considered.
 
-##### Result
+#### Result
 Valid GeoCoordinate object on success, null when no valid entries found.
 
-##### Sample Usage
+#### Sample Usage
 ```csharp
 string sampleAddress = "ABCD, Los Angeles";
 
@@ -76,10 +76,10 @@ GeoCordinate singleResult = await translator.GetCoordinate(sampleAddress, GeoCod
 
 Retrieve all valid coordinates from geoservice list for specified address string. Only coordinates satisfiying minimum threshold accuracy are included.
 
-##### Result
+#### Result
 List of valid GeoCoordinate objects on success, empty list when no valid entries found.
 
-##### Sample Usage
+#### Sample Usage
 ```csharp
 string sampleAddress = "ABCD, Los Angeles";
 
