@@ -56,14 +56,14 @@ geoServiceList.Add(GeoServiceFactory.CreateGoogleService(gcClient, googleKey));
 var translator = new AddressTranslator(geoServices);
 ```
 
-##### Method - Task\<GeoCordinate\> GetCoordinate(string address, AccuracyLevel threshold)
+#### Method - Task\<GeoCordinate\> GetCoordinate(string address, AccuracyLevel threshold)
 
 Retrieve first valid coordinate from geoservice list for specified address string. Coordinate only satisfiying minimum threshold accuracy are considered.
 
 ##### Result
 Valid GeoCoordinate object on success, null when no valid entries found.
 
-#### Sample Usage
+##### Sample Usage
 ```csharp
 string sampleAddress = "ABCD, Los Angeles";
 
@@ -72,14 +72,14 @@ var translator = new AddressTranslator(geoServices);
 GeoCordinate singleResult = await translator.GetCoordinate(sampleAddress, GeoCoding.Data.AccuracyLevel.Lowest);
 ```
 
-##### Method - IList<Task\<GeoCordinate\>> GetAllCoordinates(string address, AccuracyLevel threshold)
+#### Method - IList<Task\<GeoCordinate\>> GetAllCoordinates(string address, AccuracyLevel threshold)
 
 Retrieve all valid coordinates from geoservice list for specified address string. Only coordinates satisfiying minimum threshold accuracy are included.
 
 ##### Result
 List of valid GeoCoordinate objects on success, empty list when no valid entries found.
 
-#### Sample Usage
+##### Sample Usage
 ```csharp
 string sampleAddress = "ABCD, Los Angeles";
 
