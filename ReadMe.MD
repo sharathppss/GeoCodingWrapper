@@ -17,7 +17,7 @@ Import below nuget package locally for usage.
 
 **Note:** Rename package to *.nupkg extension before use.
 
-[Nuget local feed instructions](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds)
+[Nuget local feed instructions](https://docs.microsoft.com/en-us/visualstudio/mac/nuget-walkthrough?view=vsmac-2019#adding-package-sources)
 
 [Download Nuget Package](NugetPackage/GeoCodingWrapper.1.0.0.0.nupkg.local)
 
