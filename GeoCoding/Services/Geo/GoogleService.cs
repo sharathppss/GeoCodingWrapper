@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using Microsoft.CSharp.RuntimeBinder;
+
 using GeoCoding.Data;
 using GeoCoding.Errors;
 using GeoCoding.Interfaces;
 using GeoCoding.Utils.Http;
-using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json;
 
+
+[assembly: InternalsVisibleTo("UnitTests")]
 namespace GeoCoding.Services
 {
     public class GoogleService: IGeoService

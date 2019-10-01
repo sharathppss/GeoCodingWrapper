@@ -32,12 +32,11 @@ namespace GeoCodingUnitTests
         public async Task HappyFlow(string jsonPath, AccuracyLevel expectedAccuracy)
         {
             var goodResponse = await File.OpenText(jsonPath).ReadToEndAsync();
-
             MockHttp.When(BaseUrl)
                 .Respond("application/json", goodResponse);
 
-            var service = GeoServiceFactory.CreateBingService(MockHttp.ToHttpClient(), "SOME_KEY");
-
+            var service = new BingService("SOME_KEY", MockHttp.ToHttpClient());
+           
             var coordinates = await service.GetCoordinate("Good address");
             var vals = Generic.ParseCoordinatesFromBingJson(goodResponse);
 
@@ -57,7 +56,7 @@ namespace GeoCodingUnitTests
             MockHttp.When(BaseUrl)
                 .Respond("application/json", missingParamResponse);
 
-            var service = GeoServiceFactory.CreateBingService(MockHttp.ToHttpClient(), "SOME_KEY");
+            var service = new BingService("SOME_KEY", MockHttp.ToHttpClient());
 
             await Assert.ThrowsAsync<GCException>(() => service.GetCoordinate("Good address"));
 
@@ -69,7 +68,7 @@ namespace GeoCodingUnitTests
             MockHttp.When(BaseUrl)
                 .Respond(System.Net.HttpStatusCode.BadRequest);
 
-            var service = GeoServiceFactory.CreateBingService(MockHttp.ToHttpClient(), "SOME_KEY");
+            var service = new BingService("SOME_KEY", MockHttp.ToHttpClient());
 
             await Assert.ThrowsAsync<GCException>(() => service.GetCoordinate("Good address"));
 

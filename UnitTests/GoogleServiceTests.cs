@@ -28,7 +28,7 @@ namespace AddressTranslationTests
             MockHttp.When(BaseUrl)
                 .Respond("application/json", goodResponse);
 
-            var service = GeoServiceFactory.CreateGoogleService(MockHttp.ToHttpClient(), "SOME_KEY");
+            var service = new GoogleService("SOME_KEY", MockHttp.ToHttpClient());
 
             var coordinates = await service.GetCoordinate("Good address");
             var vals = Generic.ParseCoordinatesFromGoogleJson(goodResponse);
@@ -49,7 +49,7 @@ namespace AddressTranslationTests
             MockHttp.When(BaseUrl)
                 .Respond("application/json", missingParamResponse);
 
-            var service = GeoServiceFactory.CreateGoogleService(MockHttp.ToHttpClient(), "SOME_KEY");
+            var service = new GoogleService("SOME_KEY", MockHttp.ToHttpClient());
 
             await Assert.ThrowsAsync<GCException>(() => service.GetCoordinate("Good address"));
 
@@ -65,7 +65,7 @@ namespace AddressTranslationTests
             MockHttp.When(BaseUrl)
                 .Respond("application/json", invalidStatusResponse);
 
-            var service = GeoServiceFactory.CreateGoogleService(MockHttp.ToHttpClient(), "SOME_KEY");
+            var service = new GoogleService("SOME_KEY", MockHttp.ToHttpClient());
 
             await Assert.ThrowsAsync<GCException>(() => service.GetCoordinate("Good address"));
 
@@ -77,7 +77,7 @@ namespace AddressTranslationTests
             MockHttp.When(BaseUrl)
                 .Respond(System.Net.HttpStatusCode.BadRequest);
 
-            var service = GeoServiceFactory.CreateGoogleService(MockHttp.ToHttpClient(), "SOME_KEY");
+            var service = new GoogleService("SOME_KEY", MockHttp.ToHttpClient());
 
             await Assert.ThrowsAsync<GCException>(() => service.GetCoordinate("Good address"));
 
